@@ -22,7 +22,7 @@ originPart.Transparency = 1
 local targetPart = Instance.new('Part', workspace)
 targetPart.Anchored = true
 targetPart.Position = Vector3.new(0, 0, 0)
-targetPart.Scale = Vector3.new(4, 4, 4)
+targetPart.Size = Vector3.new(4, 4, 4)
 targetPart.Shape = Enum.PartType.Ball
 targetPart.BrickColor = BrickColor.Red()
 targetPart.Material = Enum.Material.Neon
@@ -386,7 +386,7 @@ local TPTypeDropdown = TeleTab:CreateDropdown({
    Name = "Teleport Type",
    Options = {"To Origin","To Target Position",--[["To Target Player",]]"To Self"},
    CurrentOption = {"To Origin"},
-   MultipleOptions = true,
+   MultipleOptions = false,
    Flag = "TPtype", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Options)
       blackHoleMode = Options
@@ -432,16 +432,18 @@ end)
 
 local VisTab = Window:CreateTab("Visuals", nil)
 local VisThemeSection = VisTab:CreateSection("Theme")
-local ThemeToggle = VisTab:CreateToggle({
+local Toggle = VisTab:CreateToggle({
    Name = "Dark Mode",
    CurrentValue = true,
    Flag = "DarkLightTheme", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-   if Value then
-      Window.ModifyTheme('Default')
-   else
-      Window.ModifyTheme('Light')
+      if Value then
+         Window.ModifyTheme('Default')
+      else
+         Window.ModifyTheme('Light')
+      end -- Removed the extra comma here
    end,
 })
+
 
 --Rayfield:LoadConfiguration()
