@@ -320,17 +320,18 @@ local MainTab = Window:CreateTab("Movement", nil)
 local MovementSection = MainTab:CreateSection("Values")
 
 local FlyToggle = MainTab:CreateToggle({
-   Name = "Flight",
-   CurrentValue = true,
-   Flag = "flying", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-   if Value then
-      NOFLY()
-		task.wait()
-		sFLY()
-   else
-      NOFLY()
-   end,
+    Name = "Flight",
+    CurrentValue = true,
+    Flag = "flying",
+    Callback = function(Value)
+        if Value then
+            NOFLY()
+            task.wait()
+            sFLY()
+        else
+            NOFLY()
+        end
+    end,
 })
 
 local WSSlider = MainTab:CreateSlider({
@@ -351,6 +352,10 @@ local ResetWSButton = MainTab:CreateButton({
       WSSlider:Set(40) -- The new slider integer value
    end,
 })
+
+
+
+
 
 
 
