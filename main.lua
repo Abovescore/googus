@@ -250,7 +250,7 @@ local StartBlackHole = TeleTab:CreateToggle({
       end
    end,
 })
-local BlackHoleRadiusSlider = MainTab:CreateSlider({
+local BlackHoleRadiusSlider = TeleTab:CreateSlider({
    Name = "Radius",
    Range = {1, 100},
    Increment = 1,
@@ -261,15 +261,10 @@ local BlackHoleRadiusSlider = MainTab:CreateSlider({
         radius = Value
    end,
 })
-local BlackHoleAngleSlider = MainTab:CreateSlider({
-   Name = "Angle",
-   Range = {1, 360},
-   Increment = 1,
-   Suffix = "Angle",
-   CurrentValue = 1,
-   Flag = "angSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-        angle = Value
+local ResetBHButton = TeleTab:CreateButton({
+   Name = "Reset Black Hole Sliders",
+   Callback = function()
+      BlackHoleRadiusSlider:Set(40) -- The new slider integer value
    end,
 })
 
