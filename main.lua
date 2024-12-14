@@ -7,7 +7,7 @@ local Workspace = game:GetService("Workspace")
 
 local angle = 1
 local radius = 40
-local blackHoleActive = Value
+local blackHoleActive = false
 
 local blackHoleMode = "To Origin"
 
