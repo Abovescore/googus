@@ -1,5 +1,4 @@
 repeat task.wait() until game:IsLoaded()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))() --lol
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
