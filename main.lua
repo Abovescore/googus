@@ -236,6 +236,13 @@ function sFLY(vfly)
 	end
 	FLY()
 end
+function NOFLY()
+	FLYING = false
+	if Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
+		Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = false
+	end
+	pcall(function() workspace.CurrentCamera.CameraType = Enum.CameraType.Custom end)
+end
 
 
 
@@ -389,10 +396,10 @@ local TPTypeDropdown = TeleTab:CreateDropdown({
    end,
 })
 
-local Button = TeleTab:CreateButton({
+local TargetButton = TeleTab:CreateButton({
    Name = "Set Target Position",
    Callback = function()
-      if DropdownName.CurrentOption == "To Target Position" then
+      if TPTypeDropdown.CurrentOption == "To Target Position" then
             if targetPart.Transparency == 1 then
                targetPart.Transparency = 0
             end
@@ -425,7 +432,7 @@ end)
 
 local VisTab = Window:CreateTab("Visuals", nil)
 local VisThemeSection = VisTab:CreateSection("Theme")
-local Toggle = VisTab:CreateToggle({
+local ThemeToggle = VisTab:CreateToggle({
    Name = "Dark Mode",
    CurrentValue = true,
    Flag = "DarkLightTheme", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
