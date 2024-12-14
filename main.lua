@@ -241,7 +241,7 @@ local TeleConfigSection = TeleTab:CreateSection("Configuration")
 local StartBlackHole = TeleTab:CreateToggle({
    Name = "Start Unanchored Teleport",
    CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "strtBlackHole", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
       if Value then
          toggleBlackHole()
@@ -262,7 +262,7 @@ local BlackHoleRadiusSlider = TeleTab:CreateSlider({
    end,
 })
 local ResetBHButton = TeleTab:CreateButton({
-   Name = "Reset Black Hole Sliders",
+   Name = "Reset Radius",
    Callback = function()
       BlackHoleRadiusSlider:Set(40) -- The new slider integer value
    end,
