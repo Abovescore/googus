@@ -175,6 +175,10 @@ end
 
 
 
+function getRoot(char)
+	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+	return rootPart
+end
 
 local FLYING = false
 local QEfly = true
@@ -182,7 +186,6 @@ local iyflyspeed = 1
 local vehicleflyspeed = 1
 function sFLY(vfly)
 	repeat task.wait() until Players.LocalPlayer and Players.LocalPlayer.Character and getRoot(Players.LocalPlayer.Character) and Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-	repeat task.wait() until IYMouse
 	if flyKeyDown or flyKeyUp then flyKeyDown:Disconnect() flyKeyUp:Disconnect() end
 
 	local T = getRoot(Players.LocalPlayer.Character)
@@ -411,7 +414,7 @@ local TPTypeDropdown = TeleTab:CreateDropdown({
    Flag = "TPtype", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Options)
       blackHoleMode = Options
-      if Options not "To Target Position" then
+      if Options ~= "To Target Position" then
          targetPart.Transparency = 1
       end
    end,
@@ -421,7 +424,7 @@ local Button = TeleTab:CreateButton({
    Name = "Set Target Position",
    Callback = function()
       if DropdownName.CurrentOption == "To Target Position" then
-            if targetPart.Transparency = 1 then
+            if targetPart.Transparency == 1 then
                targetPart.Transparency = 0
             end
          targetPart.CFrame = Players.LocalPlayer.Character.HumanoidRootPart.CFrame
