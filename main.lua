@@ -1,4 +1,5 @@
 repeat task.wait() until game:IsLoaded()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))() --lol
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -112,13 +113,6 @@ local function toggleBlackHole()
          Attachment1.WorldCFrame = CFrame.new(0, -1000, 0)
    end
 end
-
-LocalPlayer.CharacterAdded:Connect(function()
-   humanoidRootPart, Attachment1 = setupPlayer()
-   if blackHoleActive then
-         toggleBlackHole()
-   end
-end)
 
 
 
@@ -261,11 +255,14 @@ local BlackHoleRadiusSlider = TeleTab:CreateSlider({
         radius = Value
    end,
 })
-local ResetBHButton = TeleTab:CreateButton({
-   Name = "Reset Radius",
-   Callback = function()
-      BlackHoleRadiusSlider:Set(40) -- The new slider integer value
-   end,
-})
+LocalPlayer.CharacterAdded:Connect(function()
+   humanoidRootPart, Attachment1 = setupPlayer()
+   if blackHoleActive then
+         toggleBlackHole()
+   end
+   LocalPlayer.Character.Humanoid.Died:Connect(function()
+      StartBlackHole:Set(false)
+   end)
+end)
 
 --Rayfield:LoadConfiguration()
