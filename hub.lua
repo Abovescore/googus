@@ -12,7 +12,7 @@ local MainTab = GUI:Tab{
 	Icon = "rbxassetid://74000494301350"
 }
 
-MainTab:InfYiff{
+MainTab:Button{
 	Name = "Infinite Yield",
 	Description = nil,
 	Callback = function()
