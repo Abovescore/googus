@@ -1,118 +1,76 @@
-local DiscordLib =
-    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
-local win = DiscordLib:Window("discord library")
+local GUI = Mercury:Create{
+    Name = "Starving's Trolling Panel",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
+    Link = "https://github.com/Abovescore/StarvingsTrollingHub"
+}
 
-local serv = win:Server("Preview", "")
+local Tab = GUI:Tab{
+	Name = "New Tab",
+	Icon = "rbxassetid://74000494301350"
+}
 
-local btns = serv:Channel("Buttons")
+Tab:Button{
+	Name = "Button",
+	Description = nil,
+	Callback = function() end
+}
 
-btns:Button(
-    "Kill all",
-    function()
-        DiscordLib:Notification("Notification", "Killed everyone!", "Okay!")
-    end
-)
+Tab:Toggle{
+	Name = "Toggle",
+	StartingState = false,
+	Description = nil,
+	Callback = function(state) end
+}
 
-btns:Seperator()
+Tab:Textbox{
+	Name = "Textbox",
+	Callback = function(text) end
+}
 
-btns:Button(
-    "Get max level",
-    function()
-        DiscordLib:Notification("Notification", "Max level!", "Okay!")
-    end
-)
+local MyDropdown = Tab:Dropdown{
+	Name = "Dropdown",
+	StartingText = "Select...",
+	Description = nil,
+	Items = {
+		{"Hello", 1}, 		-- {name, value}
+		12,			-- or just value, which is also automatically taken as name
+		{"Test", "bump the thread pls"}
+	},
+	Callback = function(item) return end
+}
 
-local tgls = serv:Channel("Toggles")
+Tab:Slider{
+	Name = "Slider",
+	Default = 50,
+	Min = 0,
+	Max = 100,
+	Callback = function() end
+}
 
-tgls:Toggle(
-    "Auto-Farm",
-    false,
-    function(bool)
-        print(bool)
-    end
-)
+Tab:Keybind{
+	Name = "Keybind",
+	Keybind = nil,
+	Description = nil
+}
 
-local sldrs = serv:Channel("Sliders")
+GUI:Notification{
+	Title = "Alert",
+	Text = "You shall bump the thread on V3rmillion!",
+	Duration = 3,
+	Callback = function() end
+}
 
-local sldr =
-    sldrs:Slider(
-    "Slide me!",
-    0,
-    1000,
-    400,
-    function(t)
-        print(t)
-    end
-)
+Tab:ColorPicker{
+	Style = Mercury.ColorPickerStyles.Legacy,
+	Callback = function(color) end
+}
 
-sldrs:Button(
-    "Change to 50",
-    function()
-        sldr:Change(50)
-    end
-)
-
-local drops = serv:Channel("Dropdowns")
-
-local drop =
-    drops:Dropdown(
-    "Pick me!",
-    {"Option 1", "Option 2", "Option 3", "Option 4", "Option 5"},
-    function(bool)
-        print(bool)
-    end
-)
-
-drops:Button(
-    "Clear",
-    function()
-        drop:Clear()
-    end
-)
-
-drops:Button(
-    "Add option",
-    function()
-        drop:Add("Option")
-    end
-)
-
-local clrs = serv:Channel("Colorpickers")
-
-clrs:Colorpicker(
-    "ESP Color",
-    Color3.fromRGB(255, 1, 1),
-    function(t)
-        print(t)
-    end
-)
-
-local textbs = serv:Channel("Textboxes")
-
-textbs:Textbox(
-    "Gun power",
-    "Type here!",
-    true,
-    function(t)
-        print(t)
-    end
-)
-
-local lbls = serv:Channel("Labels")
-
-lbls:Label("This is just a label.")
-
-local bnds = serv:Channel("Binds")
-
-bnds:Bind(
-    "Kill bind",
-    Enum.KeyCode.RightShift,
-    function()
-        print("Killed everyone!")
-    end
-)
-
-serv:Channel("by dawid#7205")
-
-win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
+GUI:Credit{
+	Name = "Abovescore",
+	Description = "Helped with the script",
+	V3rm = "link/name",
+	Discord = "helo#1234"
+}
