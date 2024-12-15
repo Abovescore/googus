@@ -1,3 +1,7 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
@@ -19,3 +23,19 @@ MainTab:Button{
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 	end
 }
+
+-- game-specific tabs
+if game.PlaceId == 189707 then -- natural disaster survival
+	local NDSTab = GUI:Tab{
+		Name = "NDS",
+		Icon = "rbxassetid://7698866402"
+	}
+
+	NDSTab:Button{
+		Name = "Black Hole",
+		Description = nil,
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+		end
+	}
+end
