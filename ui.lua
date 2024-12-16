@@ -431,10 +431,10 @@ function Library:create(options)
 	end
 
 	options = self:set_defaults({
-		Name = "Googus-UI",
+		Name = "Mercury",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
-		Link = "https://github.com/Abovescore/Googus/blob/Hack/ui.lua"
+		Link = "https://github.com/deeeity/mercury-lib"
 	}, options)
 
 	if getgenv and getgenv().MercuryUI then
@@ -457,7 +457,6 @@ function Library:create(options)
 	local gui = self:object("ScreenGui", {
 		Parent = (RunService:IsStudio() and LocalPlayer.PlayerGui) or game:GetService("CoreGui"),
 		ZIndexBehavior = Enum.ZIndexBehavior.Global
-		IgnoreGuiInset = true
 	})
 
 	local notificationHolder = gui:object("Frame", {
@@ -885,7 +884,7 @@ function Library:create(options)
 	settingsTab:keybind{
 		Name = "Toggle Key",
 		Description = "Key to show/hide the UI.",
-		Keybind = Enum.KeyCode.RightShift,
+		Keybind = Enum.KeyCode.Delete,
 		Callback = function()
 			self.Toggled = not self.Toggled
 			Library:show(self.Toggled)
@@ -921,7 +920,7 @@ function Library:create(options)
 
 	--creditsTab:credit{Name = "Abstract", Description = "UI Library Developer", Discord = "Abstract#8007", V3rmillion = "AbstractPoo"}
 	--creditsTab:credit{Name = "Deity", Description = "UI Library Developer", Discord = "Deity#0228", V3rmillion = "0xDEITY"}
-	creditsTab:credit{Name = "Repository", Description = "UI Library Repository", Github="https://github.com/Abovescore/Googus/blob/Hack/ui.lua"}
+	creditsTab:credit{Name = "Googus-UI", Description = "UI Library Repository", Github="https://github.com/Abovescore/Googus/blob/Hack/ui.lua"}
 
 	return mt
 end
@@ -3561,3 +3560,4 @@ return setmetatable(Library, {
 		return rawget(Library, i:lower())
 	end
 })
+
