@@ -33,6 +33,27 @@ MainTab:Button{
 	end
 }
 
+local UPMTab = GUI:Tab{
+	Name = "Unanchored Part Manipulation",
+	Icon = "rbxassetid://128083272851878"
+}
+
+UPMTab:Button{
+	Name = "Part Ring",
+	Description = nil,
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/ringparts.lua"))()
+	end
+}
+
+UPMTab:Button{
+	Name = "Black Hole",
+	Description = nil,
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/blackhole.lua"))()
+	end
+}
+
 -- game-specific tabs
 if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster survival, cuando el
 		GUI:Notification{
