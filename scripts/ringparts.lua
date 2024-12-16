@@ -375,7 +375,7 @@ window:ColorPicker("Highlight Color", true, function(color)
     highlightColor = color
 end)
 
-window:Toggle("Highlight Unanchored", false, function(Value)
+--[[window:Toggle("Highlight Unanchored", false, function(Value)
     if Value then
         for i, v in pairs(workspace:GetDescendants()) do
             if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
@@ -395,4 +395,4 @@ window:Toggle("Highlight Unanchored", false, function(Value)
     while task.wait() and Value do
         h.FillColor = highlightColor
     end
-end)
+end)]]
