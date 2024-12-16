@@ -363,22 +363,13 @@ RunService.Heartbeat:Connect(function()
     end
 end)
 
--- Button functionality
-ToggleButton.MouseButton1Click:Connect(function()
-    ringPartsEnabled = not ringPartsEnabled
-    ToggleButton.Text = ringPartsEnabled and "Ring Parts On" or "Ring Parts Off"
-    ToggleButton.BackgroundColor3 = ringPartsEnabled and Color3.fromRGB(50, 205, 50) or Color3.fromRGB(160, 82, 45)
-    playSound("12221967")
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
+local window = library:Window("Googus Part Ring")
+
+window:Slider("Radius",1,100,50, function(Value)
+    radius = math.min(10000, Value)
 end)
 
-DecreaseRadius.MouseButton1Click:Connect(function()
-    radius = math.max(0, radius - 5)
-    RadiusDisplay.Text = "Radius: " .. radius
-    playSound("12221967")
-end)
-
-IncreaseRadius.MouseButton1Click:Connect(function()
-    radius = math.min(10000, radius + 5)
-    RadiusDisplay.Text = "Radius: " .. radius
-    playSound("12221967")
+window:Toggle("Start", false, function(Value)
+    ringPartsEnabled = Value
 end)
