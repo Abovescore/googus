@@ -1,6 +1,7 @@
 repeat task.wait() until game:IsLoaded()
 
 local Players = game:GetService("Players")
+local TextChatService = game:GetService("TextChatService")
 
 local function SendChatMessage(message)
     if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
