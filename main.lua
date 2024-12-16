@@ -8,12 +8,10 @@ local GoogusUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Abov
 local Players = game:GetService("Players")
 
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-local IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, UserInputService:GetPlatform())
 
-local KeepGoogus = true
 local TeleportCheck = false
 Players.LocalPlayer.OnTeleport:Connect(function(State)
-	if KeepGoogus and (not TeleportCheck) and queueteleport then
+	if (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
 		queueteleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/main.lua"))()')
 	end
@@ -30,22 +28,6 @@ local MainTab = GUI:Tab{
 	Name = "Main",
 	Icon = "rbxassetid://91171486133065"
 }
-
-if IsOnMobile then
-	GUI:Prompt{
-		Followup = false,
-		Title = "Mobile Compatibility",
-		Text = "Googus Hack is a PC-focused script. To increase mobile compatibility, would you like to run an on-screen keyboard script?",
-		Buttons = {
-			ok = function()
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/keyboard.lua"))()
-			end,
-			no = function()
-				return false
-			end
-		}
-	}
-end
 
 MainTab:Button{
 	Name = "Infinite Yield",
