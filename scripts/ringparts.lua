@@ -99,7 +99,7 @@ end
 -- Play initial sound
 playSound("2865227271")
 
--- GUI Creation
+--[[
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "SuperRingPartsGUI"
 ScreenGui.ResetOnSpawn = false
@@ -267,7 +267,7 @@ UserInputService.InputChanged:Connect(function(input)
     if input == dragInput and dragging then
         update(input)
     end
-end)
+end)  ]]--
 
 -- Ring Parts Claim
 if not getgenv().Network then
