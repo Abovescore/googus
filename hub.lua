@@ -7,7 +7,7 @@ local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeei
 local GUI = Mercury:Create{
     Name = "Starving's Trolling Panel",
     Size = UDim2.fromOffset(600, 400),
-    Theme = Mercury.Themes.Dark,
+    Theme = Mercury.Themes.Rust,
     Link = "https://github.com/Abovescore/StarvingsTrollingHub"
 }
 
@@ -26,6 +26,13 @@ MainTab:Button{
 
 -- game-specific tabs
 if game.PlaceId == 189707 then -- natural disaster survival
+		GUI:Notification{
+		Title = "Alert",
+		Text = "Game detected, NDS! New tab added.",
+		Duration = 3,
+		Callback = function() end
+	}
+	
 	local NDSTab = GUI:Tab{
 		Name = "NDS",
 		Icon = "rbxassetid://7698866402"
