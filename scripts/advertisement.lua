@@ -31,5 +31,5 @@ end
 if Players.LocalPlayer.Name ~= "GoogusHack997" or Players.LocalPlayer.Name ~= "GoogusHack998" or Players.LocalPlayer.Name ~= "GoogusHack999" then
   SendChatMessage("ɢᴏᴏɢᴜsʜᴀᴄᴋ™ ᴏɴ ᴛᴏᴘ")
   task.wait()
-  SendChatMessage("ɢɪᴛ ∕ ᴀʙᴏᴠᴇsᴄᴏʀᴇ ∕ ɢᴏᴏɢᴜs")
+  SendChatMessage("ɢᴇᴛ ᴏɴ: ɢɪᴛ ∕ ᴀʙᴏᴠᴇsᴄᴏʀᴇ ∕ ɢᴏᴏɢᴜs")
 end
