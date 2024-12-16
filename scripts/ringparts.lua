@@ -368,14 +368,14 @@ window:Toggle("Start", false, function(Value)
     ringPartsEnabled = Value
 end)
 
-window:Label("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯", Color3.fromRGB(127, 143, 166))
+window:Label("-----------------", Color3.fromRGB(127, 143, 166))
 
 local highlightColor = Color3.fromRGB(255, 0, 0)
 window:ColorPicker("Highlight Color", true, function(color)
     highlightColor = color
 end)
 
---[[window:Toggle("Highlight Unanchored", false, function(Value)
+window:Toggle("Highlight Unanchored", false, function(Value)
     if Value then
         for i, v in pairs(workspace:GetDescendants()) do
             if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
@@ -386,8 +386,8 @@ end)
         end
     else
         for i, v in pairs(workspace:GetDescendants()) do
-            if v.Name = "GoogusHackHighlight"
-                v:Destroy
+            if v.Name == "GoogusHackHighlight"
+                v:Destroy()
             end
         end
     end
@@ -395,4 +395,4 @@ end)
     while task.wait() and Value do
         h.FillColor = highlightColor
     end
-end)]]
+end)
