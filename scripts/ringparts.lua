@@ -375,7 +375,7 @@ window:ColorPicker("Highlight Color", true, function(color)
     highlightColor = color
 end)
 
-window:Toggle("Highlight Unanchored", false, function(Value)
+--[[window:Toggle("Highlight Unanchored", false, function(Value)
     if Value then
         for i, v in pairs(workspace:GetDescendants()) do
             if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
@@ -394,5 +394,32 @@ window:Toggle("Highlight Unanchored", false, function(Value)
 
     while task.wait() and Value do
         h.FillColor = highlightColor
+    end
+end)]]
+window:Toggle("Highlight Unanchored", false, function(Value)
+    if Value then
+        for _, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
+                local h = Instance.new("Highlight", v)
+                h.Name = "GoogusHackHighlight"
+                h.OutlineTransparency = 1
+            end
+        end
+    else
+        for _, v in pairs(workspace:GetDescendants()) do
+            if v.Name == "GoogusHackHighlight" then
+                v:Destroy()
+            end
+        end
+    end
+
+    -- Update highlight colors dynamically if the toggle is enabled
+    while task.wait() and Value do
+        for _, v in pairs(workspace:GetDescendants()) do
+            local highlight = v:FindFirstChild("GoogusHackHighlight")
+            if highlight then
+                highlight.FillColor = highlightColor
+            end
+        end
     end
 end)
