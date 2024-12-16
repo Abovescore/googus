@@ -40,7 +40,7 @@ local UPMTab = GUI:Tab{
 
 UPMTab:Button{
 	Name = "Part Ring",
-	Description = nil,
+	Description = "Super Ring Parts V6 by Googus",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/ringparts.lua"))()
 	end
@@ -48,14 +48,14 @@ UPMTab:Button{
 
 UPMTab:Button{
 	Name = "Black Hole",
-	Description = nil,
+	Description = "Ring parts, but centralized",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/blackhole.lua"))()
 	end
 }
 UPMTab:Button{
 	Name = "Gravity Gun",
-	Description = "Q to push, E to pull, T to reset rotation",
+	Description = "Q to pull, E to push, T to reset rotation",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/gravitygun.lua"))()
 	end
