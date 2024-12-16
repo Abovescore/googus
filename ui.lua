@@ -881,11 +881,25 @@ function Library:create(options)
 
 	settingsTab:_theme_selector()
 
+	local function getKeyCodeName(keyCode)
+    		return string.match(tostring(keyCode), "%.([^.]+)$")
+	end
+
+	local firstTimeMenuOpen = true
 	settingsTab:keybind{
 		Name = "Toggle Key",
 		Description = "Key to show/hide the UI.",
-		Keybind = Enum.KeyCode.Delete,
+		Keybind = Enum.KeyCode.RightShift,
 		Callback = function()
+			if firstTimeMenuOpen then
+				Library:Notification{
+					Title = "UI Closed",
+					Text = "Press " .. getKeyCodeName(Keybind) .. "to re-open the menu.",
+					Duration = 5,
+					Callback = function() end
+				}
+				firstTimeMenuOpen = false
+			end
 			self.Toggled = not self.Toggled
 			Library:show(self.Toggled)
 		end,
