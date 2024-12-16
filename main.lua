@@ -62,7 +62,7 @@ UPMTab:Button{
 }
 
 -- game-specific tabs
-if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster survival, cuando el
+--[[ if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster survival, cuando el
 		GUI:Notification{
 		Title = "Alert",
 		Text = "Game detected, Natural Disaster Survival/cuando el! New tab added.",
@@ -82,4 +82,4 @@ if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/ndsblackhole.lua"))()
 		end
 	}
-end
+end ]]--
