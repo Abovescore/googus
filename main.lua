@@ -34,7 +34,7 @@ MainTab:Button{
 }
 
 local UPMTab = GUI:Tab{
-	Name = "Unanchored Part Manipulation",
+	Name = "Unanchored Part Movement",
 	Icon = "rbxassetid://128083272851878"
 }
 
