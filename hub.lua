@@ -42,7 +42,15 @@ if game.PlaceId == 189707 then -- natural disaster survival
 		Name = "Black Hole",
 		Description = nil,
 		Callback = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/StarvingsTrollingPanel/main/scripts/blackhole.lua"))()
+		end
+	}
+	
+	NDSTab:Button{
+		Name = "Ring Parts",
+		Description = nil,
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/StarvingsTrollingPanel/main/scripts/ringparts.lua"))()
 		end
 	}
 end
