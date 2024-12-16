@@ -3,12 +3,12 @@ if not game:IsLoaded() then
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/advertisement.lua"))()
-local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local GoogusUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/ui.lua"))()
 
-local GUI = Mercury:Create{
+local GUI = GoogusUI:Create{
     Name = "Googus Hack",
     Size = UDim2.fromOffset(600, 400),
-    Theme = Mercury.Themes.Rust,
+    Theme = GoogusUI.Themes.Rust,
     Link = "https://github.com/Abovescore/Googus"
 }
 
