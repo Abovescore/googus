@@ -5,7 +5,7 @@ end
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
-    Name = "Starving's Trolling Panel",
+    Name = "Googus Hack",
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Rust,
     Link = "https://github.com/Abovescore/Googus"
@@ -25,7 +25,7 @@ MainTab:Button{
 }
 
 -- game-specific tabs
-if game.PlaceId == 189707 then -- natural disaster survival
+if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster survival, cuando el
 		GUI:Notification{
 		Title = "Alert",
 		Text = "Game detected, NDS! New tab added.",
