@@ -8,7 +8,7 @@ local GUI = Mercury:Create{
     Name = "Starving's Trolling Panel",
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Rust,
-    Link = "https://github.com/Abovescore/StarvingsTrollingHub"
+    Link = "https://github.com/Abovescore/Googus"
 }
 
 local MainTab = GUI:Tab{
@@ -42,7 +42,7 @@ if game.PlaceId == 189707 then -- natural disaster survival
 		Name = "Black Hole",
 		Description = nil,
 		Callback = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/StarvingsTrollingPanel/main/scripts/blackhole.lua"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/blackhole.lua"))()
 		end
 	}
 	
@@ -50,7 +50,7 @@ if game.PlaceId == 189707 then -- natural disaster survival
 		Name = "Ring Parts",
 		Description = nil,
 		Callback = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/StarvingsTrollingPanel/main/scripts/ringparts.lua"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/ringparts.lua"))()
 		end
 	}
 end
