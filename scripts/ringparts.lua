@@ -370,8 +370,8 @@ window:Slider("Radius",1,100,50, function(Value)
     radius = math.min(10000, Value)
 end)
 
-window:Slider("Rotation",0,1,0.5, function(Value)
-    rotationSpeed = Value
+window:Slider("Rotation",0,2,1, function(Value)
+    rotationSpeed = Value / 2
 end)
 
 window:Slider("Strength",100,1000,1000, function(Value)
