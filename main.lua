@@ -53,6 +53,13 @@ UPMTab:Button{
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/blackhole.lua"))()
 	end
 }
+UPMTab:Button{
+	Name = "Gravity Gun",
+	Description = "Q to push, E to pull, T to reset rotation",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/gravitygun.lua"))()
+	end
+}
 
 -- game-specific tabs
 if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster survival, cuando el
