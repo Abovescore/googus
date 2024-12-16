@@ -121,9 +121,9 @@ LocalPlayer.CharacterAdded:Connect(function()
 end)
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
-local window = library:Window("Googus NDS Black Hole")
+local ndswindow = library:Window("Googus NDS Black Hole")
 
-window:Toggle("Start", false, function(Value)
+ndswindow:Toggle("Start", false, function(Value)
        if Value then
             toggleBlackHole()
         else
