@@ -37,6 +37,22 @@ local MainTab = GUI:Tab{
 	Icon = "rbxassetid://91171486133065"
 }
 
+if IsOnMobile then
+	GUI:Prompt{
+		Followup = false,
+		Title = "Mobile Compatibility",
+		Text = "Googus Hack is a PC-focused script. To increase mobile compatibility, would you like to run an on-screen keyboard script?",
+		Buttons = {
+			ok = function()
+				return true
+			end,
+			no = function()
+				return false
+			end
+		}
+	}
+end
+
 MainTab:Button{
 	Name = "Infinite Yield",
 	Description = nil,
