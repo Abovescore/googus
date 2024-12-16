@@ -121,11 +121,11 @@ end)
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
 local window = library:Window("Googus Black Hole")
 
-window:Slider("Radius Blackhole",1,100,10, function(Value)
+window:Slider("Radius",1,100,10, function(Value)
    radius = Value
 end)
 
-window:Toggle("Blackhole", true, function(Value)
+window:Toggle("Start", false, function(Value)
        if Value then
             toggleBlackHole()
         else
