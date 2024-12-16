@@ -1,5 +1,7 @@
 repeat task.wait() until game:IsLoaded()
 
+local Players = game:GetService("Players")
+
 local function SendChatMessage(message)
     if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
         local textChannel = TextChatService.TextChannels.RBXGeneral
@@ -9,7 +11,7 @@ local function SendChatMessage(message)
     end
 end
 
-if game:GetService("Players").LocalPlayer.Name ~= "GoogusHack997" or game:GetService("Players").LocalPlayer.Name ~= "GoogusHack998" or game:GetService("Players").LocalPlayer.Name ~= "GoogusHack999" then
+if Players.LocalPlayer.Name ~= "GoogusHack997" or Players.LocalPlayer.Name ~= "GoogusHack998" or Players.LocalPlayer.Name ~= "GoogusHack999" then
   SendChatMessage("Gᴏᴏɢᴜꜱ Hᴀᴄᴋ™ Oɴ Tᴏᴘ")
   SendChatMessage("ɢɪᴛʜᴜʙ/ᴀʙᴏᴠᴇꜱᴄᴏʀᴇ/ɢᴏᴏɢᴜꜱ")
 end
