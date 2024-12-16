@@ -44,7 +44,7 @@ if IsOnMobile then
 		Text = "Googus Hack is a PC-focused script. To increase mobile compatibility, would you like to run an on-screen keyboard script?",
 		Buttons = {
 			ok = function()
-				return true
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/keyboard.lua"))()
 			end,
 			no = function()
 				return false
