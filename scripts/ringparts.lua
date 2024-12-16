@@ -1,4 +1,5 @@
--- Universal Part Claim
+-- nice chatgpt lukas. og script at https://scriptblox.com/script/Universal-Script-Super-ring-Parts-V5-By-lukas-24432
+-- 'you cant steal my code haha'
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -367,3 +368,4 @@ end)
 window:Toggle("Start", false, function(Value)
     ringPartsEnabled = Value
 end)
+-- how bout i do anyway
