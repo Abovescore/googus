@@ -35,7 +35,7 @@ if game.PlaceId == 189707 then -- natural disaster survival
 	
 	local NDSTab = GUI:Tab{
 		Name = "NDS",
-		Icon = "rbxassetid://7698866402"
+		Icon = "rbxassetid://72577903576221"
 	}
 
 	NDSTab:Button{
