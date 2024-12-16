@@ -7,14 +7,8 @@ local GoogusUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Abov
 
 local Players = game:GetService("Players")
 
-sethidden = sethiddenproperty or set_hidden_property or set_hidden_prop
-gethidden = gethiddenproperty or get_hidden_property or get_hidden_prop
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
-PlaceId, JobId = game.PlaceId, game.JobId
 local IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, UserInputService:GetPlatform())
-everyClipboard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
-isLegacyChat = TextChatService.ChatVersion == Enum.ChatVersion.LegacyChatService
 
 local KeepGoogus = true
 local TeleportCheck = false
