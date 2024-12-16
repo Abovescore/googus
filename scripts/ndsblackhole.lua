@@ -121,11 +121,7 @@ LocalPlayer.CharacterAdded:Connect(function()
 end)
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
-local window = library:Window("Googus Black Hole")
-
-window:Slider("Radius",1,100,10, function(Value)
-   radius = Value
-end)
+local window = library:Window("Googus NDS Black Hole")
 
 window:Toggle("Start", false, function(Value)
        if Value then
