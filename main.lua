@@ -3,6 +3,15 @@ if not game:IsLoaded() then
 end
 
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/ui.lua"))()
+queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+
+local TeleportCheck = true
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+	if TeleportCheck and queueteleport then
+		TeleportCheck = false
+		queueteleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/main.lua"))()')
+	end
+end)
 
 local GUI = Mercury:Create{
     Name = "Googus Hack",
