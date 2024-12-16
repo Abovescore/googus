@@ -5,7 +5,7 @@ end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/advertisement.lua"))()
 local GoogusUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/ui.lua"))()
 
-local Players = game:GetService("Players")
+--[[ local Players = game:GetService("Players")
 
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 
@@ -15,7 +15,7 @@ Players.LocalPlayer.OnTeleport:Connect(function(State)
 		TeleportCheck = true
 		queueteleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/main.lua"))()')
 	end
-end)
+end) ]]--
 
 local GUI = GoogusUI:Create{
     Name = "Googus Hack",
