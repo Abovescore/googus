@@ -351,21 +351,21 @@ RunService.Heartbeat:Connect(function()
 end)
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
-local window = library:Window("Googus Part Ring")
+local ringwindow = library:Window("Googus Part Ring")
 
-window:Slider("Radius",1,100,50, function(Value)
+ringwindow:Slider("Radius",1,100,50, function(Value)
     radius = math.min(10000, Value)
 end)
 
-window:Slider("Rotation",0,2,1, function(Value)
+ringwindow:Slider("Rotation",0,2,1, function(Value)
     rotationSpeed = Value / 2
 end)
 
-window:Slider("Strength",100,1000,1000, function(Value)
+ringwindow:Slider("Strength",100,1000,1000, function(Value)
     attractionStrength = Value
 end)
 
-window:Toggle("Start", false, function(Value)
+ringwindow:Toggle("Start", false, function(Value)
     ringPartsEnabled = Value
 end)
 -- how bout i do anyway
