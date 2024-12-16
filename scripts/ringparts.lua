@@ -398,39 +398,31 @@ end)
 end)]]
 window:Toggle("Highlight Unanchored", false, function(Value)
     if Value then
-        -- Check both workspace and Debris
-        for _, container in pairs({workspace, game:GetService("Debris")}) do
-            for _, v in pairs(container:GetDescendants()) do
-                -- Ensure the object is a type of BasePart
-                if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") 
-                    and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
-                    local h = Instance.new("Highlight", v)
-                    h.Name = "GoogusHackHighlight"
-                    h.OutlineTransparency = 1
+        -- Enable highlights for unanchored parts
+        for _, descendant in ipairs(workspace:GetDescendants()) do
+            if descendant:IsA("BasePart") and not descendant.Anchored then
+                -- Check if the part already has a Highlight
+                local existingHighlight = descendant:FindFirstChildOfClass("Highlight")
+                if not existingHighlight then
+                    -- Create a new Highlight instance
+                    local highlight = Instance.new("Highlight")
+                    highlight.Parent = descendant
+                    highlight.Adornee = descendant
+
+                    -- Optional: Customize the highlight appearance
+                    highlight.FillColor = highlightColor -- Red fill
+                    highlight.FillTransparency = 0.5
+                    highlight.OutlineTransparency = 1
                 end
             end
         end
     else
-        -- Remove highlights
-        for _, v in pairs(workspace:GetDescendants()) do
-            if v.Name == "GoogusHackHighlight" then
-                v:Destroy()
-            end
-        end
-        for _, v in pairs(game:GetService("Debris"):GetDescendants()) do
-            if v.Name == "GoogusHackHighlight" then
-                v:Destroy()
-            end
-        end
-    end
-
-    -- Update highlight colors dynamically if the toggle is enabled
-    while task.wait() and Value do
-        for _, container in pairs({workspace, game:GetService("Debris")}) do
-            for _, v in pairs(container:GetDescendants()) do
-                local highlight = v:FindFirstChild("GoogusHackHighlight")
-                if highlight then
-                    highlight.FillColor = highlightColor
+        -- Disable highlights by removing existing Highlight instances
+        for _, descendant in ipairs(workspace:GetDescendants()) do
+            if descendant:IsA("BasePart") then
+                local existingHighlight = descendant:FindFirstChildOfClass("Highlight")
+                if existingHighlight then
+                    existingHighlight:Destroy()
                 end
             end
         end
