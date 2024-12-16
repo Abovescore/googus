@@ -370,15 +370,11 @@ window:Slider("Radius",1,100,50, function(Value)
     radius = math.min(10000, Value)
 end)
 
-window:Slider("Height",1,200,100, function(Value)
-    height = Value
-end)
-
-window:Slider("Rotation",0.1,0.5,5, function(Value)
+window:Slider("Rotation",0,1,0.5, function(Value)
     rotationSpeed = Value
 end)
 
-window:Slider("Height",100,1000,1000, function(Value)
+window:Slider("Strength",100,1000,1000, function(Value)
     attractionStrength = Value
 end)
 
