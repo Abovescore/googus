@@ -398,15 +398,26 @@ end)
 end)]]
 window:Toggle("Highlight Unanchored", false, function(Value)
     if Value then
-        for _, v in pairs(workspace:GetDescendants()) do
-            if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
-                local h = Instance.new("Highlight", v)
-                h.Name = "GoogusHackHighlight"
-                h.OutlineTransparency = 1
+        -- Check both workspace and Debris
+        for _, container in pairs({workspace, game:GetService("Debris")}) do
+            for _, v in pairs(container:GetDescendants()) do
+                -- Ensure the object is a type of BasePart
+                if v:IsA("BasePart") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") 
+                    and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
+                    local h = Instance.new("Highlight", v)
+                    h.Name = "GoogusHackHighlight"
+                    h.OutlineTransparency = 1
+                end
             end
         end
     else
+        -- Remove highlights
         for _, v in pairs(workspace:GetDescendants()) do
+            if v.Name == "GoogusHackHighlight" then
+                v:Destroy()
+            end
+        end
+        for _, v in pairs(game:GetService("Debris"):GetDescendants()) do
             if v.Name == "GoogusHackHighlight" then
                 v:Destroy()
             end
@@ -415,10 +426,12 @@ window:Toggle("Highlight Unanchored", false, function(Value)
 
     -- Update highlight colors dynamically if the toggle is enabled
     while task.wait() and Value do
-        for _, v in pairs(workspace:GetDescendants()) do
-            local highlight = v:FindFirstChild("GoogusHackHighlight")
-            if highlight then
-                highlight.FillColor = highlightColor
+        for _, container in pairs({workspace, game:GetService("Debris")}) do
+            for _, v in pairs(container:GetDescendants()) do
+                local highlight = v:FindFirstChild("GoogusHackHighlight")
+                if highlight then
+                    highlight.FillColor = highlightColor
+                end
             end
         end
     end
