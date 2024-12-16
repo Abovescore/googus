@@ -54,6 +54,13 @@ UPMTab:Button{
 	end
 }
 UPMTab:Button{
+	Name = "Attach To Part",
+	Description = "CTRL + Click. Use noclip",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/attachtopart.lua"))()
+	end
+}
+UPMTab:Button{
 	Name = "Gravity Gun",
 	Description = "Q to pull, E to push, T to reset rotation",
 	Callback = function()
