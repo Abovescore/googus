@@ -13,7 +13,7 @@ local GUI = Mercury:Create{
 
 local MainTab = GUI:Tab{
 	Name = "Main",
-	Icon = "rbxassetid://74000494301350"
+	Icon = "rbxassetid://91171486133065"
 }
 
 MainTab:Button{
@@ -35,7 +35,7 @@ if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster
 	
 	local NDSTab = GUI:Tab{
 		Name = "NDS",
-		Icon = "rbxassetid://80353051055937"
+		Icon = "rbxassetid://121870380815097"
 	}
 
 	NDSTab:Button{
