@@ -47,7 +47,7 @@ if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster
 	}
 	
 	NDSTab:Button{
-		Name = "Ring Parts",
+		Name = "Part Ring",
 		Description = nil,
 		Callback = function()
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/ringparts.lua"))()
