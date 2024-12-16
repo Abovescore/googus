@@ -58,29 +58,21 @@ UPMTab:Button{
 if game.PlaceId == 189707 or game.PlaceId == 7057417395 then -- natural disaster survival, cuando el
 		GUI:Notification{
 		Title = "Alert",
-		Text = "Game detected, NDS! New tab added.",
+		Text = "Game detected, Natural Disaster Survival/cuando el! New tab added.",
 		Duration = 3,
 		Callback = function() end
 	}
 	
 	local NDSTab = GUI:Tab{
-		Name = "NDS",
+		Name = "Natural Disaster Survival",
 		Icon = "rbxassetid://121870380815097"
 	}
 
 	NDSTab:Button{
-		Name = "Black Hole",
+		Name = "NDS Black Hole",
 		Description = nil,
 		Callback = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/blackhole.lua"))()
-		end
-	}
-	
-	NDSTab:Button{
-		Name = "Part Ring",
-		Description = nil,
-		Callback = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/ringparts.lua"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/ndsblackhole.lua"))()
 		end
 	}
 end
