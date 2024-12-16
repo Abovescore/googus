@@ -457,6 +457,7 @@ function Library:create(options)
 	local gui = self:object("ScreenGui", {
 		Parent = (RunService:IsStudio() and LocalPlayer.PlayerGui) or game:GetService("CoreGui"),
 		ZIndexBehavior = Enum.ZIndexBehavior.Global
+		IgnoreGuiInset = true
 	})
 
 	local notificationHolder = gui:object("Frame", {
