@@ -66,7 +66,7 @@ end
 end
 PlayerRootPart.Position = PlayerRootPart.Position+Vector3.new(0, 0, 0)
 PlayerCharacter.Head.Anchored = false
-PlayerCharacter.Torso.Anchored = false
+--PlayerCharacter.Torso.Anchored = false
 A0.Parent = npc
 AP.Parent = npc
 AO.Parent = npc
@@ -90,7 +90,7 @@ end
 end
 PlayerRootPart.Position = PlayerRootPart.Position+Vector3.new(0, 0, 0)
 PlayerCharacter.Head.Anchored = false
-PlayerCharacter.Torso.Anchored = false
+--PlayerCharacter.Torso.Anchored = false
 A0.Parent = npc
 AP.Parent = npc
 AO.Parent = npc
