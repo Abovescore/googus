@@ -38,10 +38,9 @@ MainTab:Button{
 	Name = "Dex",
 	Description = "Roblox Studio; In-game",
 	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/refs/heads/Hack/scripts/dex.lua"))()
 	end
 }
-
 
 local CharTab = GUI:Tab{
 	Name = "Character",
