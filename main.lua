@@ -104,10 +104,17 @@ if game.PlaceId == 142823291 then -- natural disaster survival, cuando el
 	}
 
 	MMTab:Button{
-		Name = "Return To Map",
+		Name = "Goto Map",
 		Description = nil,
 		Callback = function()
 			game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1251.58972, 333.494904, 138.813095, -0.888008058, 0.260545313, -0.378890306, -1.88423819e-08, 0.823982775, 0.566614866, 0.45982793, 0.503158569, -0.731703341)
+		end
+	}
+	MMTab:Button{
+		Name = "Goto Spawn",
+		Description = nil,
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-65.3378983, 138.319153, 16.4226093, -0.026591368, -8.67318301e-11, 0.999646366, 8.65240111e-08, 1, 2.38836817e-09, -0.999646366, 8.65569234e-08, -0.026591368)
 		end
 	}
 end
