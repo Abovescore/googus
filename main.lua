@@ -28,11 +28,20 @@ local MainTab = GUI:Tab{
 
 MainTab:Button{
 	Name = "Infinite Yield",
-	Description = nil,
+	Description = "Universal admin script",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 	end
 }
+
+MainTab:Button{
+	Name = "Dex",
+	Description = "Roblox Studio; In-game",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+	end
+}
+
 
 local CharTab = GUI:Tab{
 	Name = "Character",
