@@ -34,6 +34,26 @@ MainTab:Button{
 	end
 }
 
+local CharTab = GUI:Tab{
+	Name = "Character",
+	Icon = "rbxassetid://125118458229117"
+}
+
+CharTab:Button{
+    Name = "Jork Animation",
+    Description = "Straight up jorking it. And by it...",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Szymon-Family/Pablo/Script/scripts/jerk.lua'))()
+ 
+        GUI:Notification{
+            Title = "Success",
+            Text = "Jerk animation has been added to your inventory!",
+            Duration = 3,
+            Callback = function() end
+        }
+    end
+}
+
 local UPMTab = GUI:Tab{
 	Name = "Unanchored Part Movement",
 	Icon = "rbxassetid://128083272851878"
