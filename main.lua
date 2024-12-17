@@ -47,7 +47,7 @@ CharTab:Button{
  
         GUI:Notification{
             Title = "Success",
-            Text = "Jerk animation has been added to your inventory!",
+            Text = "Jork animation has been added to your inventory!",
             Duration = 3,
             Callback = function() end
         }
@@ -99,7 +99,7 @@ if game.PlaceId == 142823291 then -- natural disaster survival, cuando el
 	}
 	
 	local MMTab = GUI:Tab{
-		Name = "Natural Disaster Survival",
+		Name = "Murder Mystery 2",
 		Icon = "rbxassetid://112377979096530"
 	}
 
