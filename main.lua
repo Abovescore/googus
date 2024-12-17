@@ -51,7 +51,11 @@ CharTab:Button{
     Name = "Jork Animation",
     Description = "Straight up jorking it. And by it...",
     Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Szymon-Family/Pablo/Script/scripts/jerk.lua'))()
+        if player.Character:FindFirstChild("Torso") then
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Szymon-Family/Pablo/Script/scripts/jerk.lua'))()
+        else
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Szymon-Family/Pablo/Script/scripts/jerkr15.lua'))()
+        end
  
         GUI:Notification{
             Title = "Success",
@@ -98,7 +102,7 @@ UPMTab:Button{
 }
 
 -- game-specific tabs
-if game.PlaceId == 142823291 then -- natural disaster survival, cuando el
+if game.PlaceId == 142823291 then -- mm2
 		GUI:Notification{
 		Title = "Alert",
 		Text = "Game detected, Murder Mystery 2! New tab added.",
@@ -115,7 +119,12 @@ if game.PlaceId == 142823291 then -- natural disaster survival, cuando el
 		Name = "Goto Map",
 		Description = nil,
 		Callback = function()
-			game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1251.58972, 333.494904, 138.813095, -0.888008058, 0.260545313, -0.378890306, -1.88423819e-08, 0.823982775, 0.566614866, 0.45982793, 0.503158569, -0.731703341)
+			for _, descendant in ipairs(workspace:GetDescendants()) do
+			    if descendant:IsA("Part") and descendant.Name == "Spawn" then
+				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = descendant.CFrame
+				break
+			    end
+			end
 		end
 	}
 	MMTab:Button{
