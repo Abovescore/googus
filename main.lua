@@ -27,11 +27,19 @@ local MainTab = GUI:Tab{
 }
 
 MainTab:Button{
-	Name = "Infinite Yield",
-	Description = "Universal admin script",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-	end
+    Name = "Infinite Yield Reborn",
+    Description = "Massive FE admin script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/RyXeleron/infiniteyield-reborn/refs/heads/master/source"))()
+    end
+}
+ 
+MainTab:Button{
+    Name = "Infinite Yield",
+    Description = "Slightly less massive FE admin script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end
 }
 
 MainTab:Button{
