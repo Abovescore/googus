@@ -127,12 +127,21 @@ if game.PlaceId == 142823291 then -- mm2
 		Name = "Goto Map",
 		Description = nil,
 		Callback = function()
+			-- Loop through all descendants in the Workspace
 			for _, descendant in ipairs(workspace:GetDescendants()) do
+			    -- Check if the descendant is a Part and has the name "spawn"
 			    if descendant:IsA("Part") and descendant.Name == "Spawn" then
-				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = descendant.CFrame
-				break
+			        -- Check if the part is inside a group named 'spawns' in 'lobby'
+			        local parent = descendant.Parent
+			        if parent and parent.Name == "Spawns" and parent.Parent and parent.Parent.Name == "Lobby" then
+			            continue -- Skip this part as it is inside 'spawns' in 'lobby'
+			        end
+			
+			        game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = descendant.CFrame
+			        break
 			    end
 			end
+
 		end
 	}
 	MMTab:Button{
