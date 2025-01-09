@@ -60,9 +60,9 @@ CharTab:Button{
     Description = "Straight up jorking it. And by it...",
     Callback = function()
         if player.Character:FindFirstChild("Torso") then
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Szymon-Family/Pablo/Script/scripts/jerk.lua'))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/jorkr6"))()
         else
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Szymon-Family/Pablo/Script/scripts/jerkr15.lua'))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Abovescore/Googus/Hack/scripts/jorkr15"))()
         end
  
         GUI:Notification{
